@@ -1,0 +1,38 @@
+<html >
+<head>
+    <link rel="stylesheet" href="loginform.component.css">
+    <title>Login Form</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" id="loginBtn">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#loginBtn").click(function() {
+                var username = $("#username").val();
+                var password = $("#password").val();
+
+                
+                if (username === "user" && password === "pass") {
+                    $("#loginMessage").text("Login successful!");
+                } else {
+                    $("#loginMessage").text("Invalid username or password. Try again.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
